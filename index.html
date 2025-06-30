@@ -1,99 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <div class="m-container">
-    <h1>To do List</h1>
-    <div class="input">
-   <input  type="text" placeholder="Write your Task">
-   <button class="add" id="add">Add</button>
-    </div>
-    </div>
-</body>
-</html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
   <meta charset="UTF-8">
   <title>Simple To-Do List</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f0f4f8;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 50px;
-    }
-    h2 {
-      color: #333;
-    }
-    .todo-container {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      width: 300px;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    button {
-      padding: 10px 15px;
-      background-color: #4CAF50;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      margin-bottom: 15px;
-    }
-    button:hover {
-      background-color: #45a049;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    li {
-      background: #e3f2fd;
-      margin-bottom: 8px;
-      padding: 10px;
-      border-radius: 5px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .delete-btn {
-      background-color: #f44336;
-      color: white;
-      border: none;
-      padding: 5px 8px;
-      border-radius: 3px;
-      cursor: pointer;
-    }
-    .delete-btn:hover {
-      background-color: #d32f2f;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
   <div class="todo-container">
     <h2>My To-Do List</h2>
-    <input type="text" id="taskInput" placeholder="Enter new task">
+    <div><input type="text" id="taskInput" placeholder="Enter new task">
     <button onclick="addTask()">Add Task</button>
     <ul id="taskList"></ul>
+    </div>
   </div>
 
   <script>
@@ -112,7 +32,7 @@
       li.textContent = taskText;
 
       const deleteBtn = document.createElement("button");
-      deleteBtn.textContent = "Delete";
+      deleteBtn.textContent = "X";
       deleteBtn.className = "delete-btn";
       deleteBtn.onclick = function () {
         taskList.removeChild(li);
@@ -125,5 +45,51 @@
     }
   </script>
 
+</body>
+</html> 
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="m-container">
+    <h1>To do List</h1>
+   <input class="input" id="taskInput" type="text" placeholder="Write your Task">
+    <button onclick="addTask()">Add Task</button>
+   <ul id="taskList"></ul>
+    </div>
+    <script>
+      function addTask(){
+        const taskInput= document.getElementById("inputTask");
+        const taskText = taskInput.value.trim();
+      }
+       if (taskText === "") {
+        alert("Please enter a task.");
+        return;
+      }
+       const taskList = document.getElementById("taskList");
+
+      const li = document.createElement("li");
+      li.textContent = taskText;
+
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "Delete";
+      deleteBtn.className = "delete-btn";
+      deleteBtn.onclick = function () {
+        taskList.removeChild(li);
+      };
+
+      li.appendChild(deleteBtn);
+      taskList.appendChild(li);
+
+      taskInput.value = "";
+    </script>
 </body>
 </html> -->
